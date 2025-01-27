@@ -1,0 +1,85 @@
+#include <iostream> 
+#include <limits>
+
+using namespace std; 
+
+// Функция для нахождения наибольшей цифры в числе
+int findMaxDigit(int number) {
+    int maxDigit = 0; 
+    while (number > 0) { // Пока число больше 0
+        int digit = number % 10; // Получаем последнюю цифру числа
+        if (digit > maxDigit) { // Если текущая цифра больше maxDigit
+            maxDigit = digit; // Обновляем maxDigit
+        }
+        number /= 10; // Убираем последнюю цифру из числа
+    }
+    return maxDigit; // Возвращаем наибольшую цифру
+}
+
+// Функция для нахождения наименьшей цифры в числе
+int findMinDigit(int number) {
+    int minDigit = 9; 
+    while (number > 0) { // Пока число больше 0
+        int digit = number % 10; // Получаем последнюю цифру числа
+        if (digit < minDigit) { // Если текущая цифра меньше minDigit
+            minDigit = digit; // Обновляем minDigit
+        }
+        number /= 10; // Убираем последнюю цифру из числа
+    }
+    return minDigit; // Возвращаем наименьшую цифру
+}
+
+int main() {
+    int choice; // Переменная для хранения выбора пользователя
+    int x; // Переменная для хранения введённого числа
+
+    do { // Начинаем цикл, который будет повторяться, пока выбор не равен 0
+        // Выводим меню задач
+        cout << "Task Menu:" << endl;
+        cout << "1: Enter a natural number" << endl; // Вариант для ввода числа
+        cout << "2: Find the largest digit in the number" << endl; // Вариант для нахождения наибольшей цифры
+        cout << "3: Find the smallest digit in the number" << endl; // Вариант для нахождения наименьшей цифры
+        cout << "0: Exit" << endl; // Вариант для выхода из программы
+        cout << "Please enter your choice: "; // Запрос выбора
+        cin >> choice; // Считываем выбор пользователя
+
+        switch (choice) { // Обрабатываем выбор
+        case 1: // Если пользователь выбрал 1
+            cout << "Enter a natural number: "; // Запрашиваем ввод числа
+            cin >> x; // Считываем введённое число
+            if (x <= 0) { // Если число не является натуральным
+                cout << "Please enter a natural number (greater than 0)." << endl; // Сообщение об ошибке
+            } else {
+                cout << "Number entered successfully!" << endl; // Подтверждение успешного ввода
+            }
+            break; // Выходим из этого варианта
+
+        case 2: // Если пользователь выбрал 2
+            if (x > 0) { // Проверяем, что число было введено
+                cout << "The largest digit in " << x << " is " << findMaxDigit(x) << endl; // Выводим наибольшую цифру
+            } else {
+                cout << "Please enter a valid natural number first (Option 1)." << endl; // Напоминание о вводе числа
+            }
+            break; // Выходим из этого варианта
+
+        case 3: // Если пользователь выбрал 3
+            if (x > 0) { // Проверяем, что число было введено
+                cout << "The smallest digit in " << x << " is " << findMinDigit(x) << endl; // Выводим наименьшую цифру
+            } else {
+                cout << "Please enter a valid natural number first (Option 1)." << endl; // Напоминание о вводе числа
+            }
+            break; // Выходим из этого варианта
+
+        case 0: // Если пользователь выбрал 0
+            cout << "Exiting program. Goodbye!" << endl; // Выводим сообщение об окончании программы
+            break; // Завершаем выполнение программы
+
+        default: // Если введён неверный вариант
+            cout << "Invalid choice. Please try again." << endl; // Сообщение об ошибке выбора
+        }
+
+        cout << endl; // Добавляем пустую строку для удобства чтения вывода
+    } while (choice != 0); // Повторяем, пока пользователь не выберет 0
+
+    return 0; // Успешное завершение программы
+}
