@@ -55,3 +55,12 @@ int main() {
             break; // Выходим из этого варианта
 
 
+        case 2: // Если пользователь выбрал 2
+            if (x > 0) { // Проверяем, что число было введено
+                cout << "The largest digit in " << x << " is " << findMaxDigit(x) << endl; // Выводим наибольшую цифру
+            } else {
+                cout << "Please enter a valid natural number first (Option 1)." << endl; // Напоминание о вводе числа
+            }
+            break; // Выходим из этого варианта
+
+      
