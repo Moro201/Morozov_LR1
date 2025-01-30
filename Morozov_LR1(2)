@@ -63,4 +63,12 @@ int main() {
             }
             break; // Выходим из этого варианта
 
-      
+        case 3: // Если пользователь выбрал 3
+            if (x > 0) { // Проверяем, что число было введено
+                cout << "The smallest digit in " << x << " is " << findMinDigit(x) << endl; // Выводим наименьшую цифру
+            } else {
+                cout << "Please enter a valid natural number first (Option 1)." << endl; // Напоминание о вводе числа
+            }
+            break; // Выходим из этого варианта
+
+   
