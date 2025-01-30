@@ -29,4 +29,29 @@ int findMinDigit(int number) {
     return minDigit; // Возвращаем наименьшую цифру
 }
 
+int main() {
+    int choice; // Переменная для хранения выбора пользователя
+    int x; // Переменная для хранения введённого числа
+
+    do { // Начинаем цикл, который будет повторяться, пока выбор не равен 0
+        // Выводим меню задач
+        cout << "Task Menu:" << endl;
+        cout << "1: Enter a natural number" << endl; // Вариант для ввода числа
+        cout << "2: Find the largest digit in the number" << endl; // Вариант для нахождения наибольшей цифры
+        cout << "3: Find the smallest digit in the number" << endl; // Вариант для нахождения наименьшей цифры
+        cout << "0: Exit" << endl; // Вариант для выхода из программы
+        cout << "Please enter your choice: "; // Запрос выбора
+        cin >> choice; // Считываем выбор пользователя
+
+        switch (choice) { // Обрабатываем выбор
+        case 1: // Если пользователь выбрал 1
+            cout << "Enter a natural number: "; // Запрашиваем ввод числа
+            cin >> x; // Считываем введённое число
+            if (x <= 0) { // Если число не является натуральным
+                cout << "Please enter a natural number (greater than 0)." << endl; // Сообщение об ошибке
+            } else {
+                cout << "Number entered successfully!" << endl; // Подтверждение успешного ввода
+            }
+            break; // Выходим из этого варианта
+
 
