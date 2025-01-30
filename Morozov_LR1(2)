@@ -3,4 +3,17 @@
 
 using namespace std; 
 
+// Функция для нахождения наибольшей цифры в числе
+int findMaxDigit(int number) {
+    int maxDigit = 0; 
+    while (number > 0) { // Пока число больше 0
+        int digit = number % 10; // Получаем последнюю цифру числа
+        if (digit > maxDigit) { // Если текущая цифра больше maxDigit
+            maxDigit = digit; // Обновляем maxDigit
+        }
+        number /= 10; // Убираем последнюю цифру из числа
+    }
+    return maxDigit; // Возвращаем наибольшую цифру
+}
+
 
