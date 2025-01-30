@@ -16,4 +16,17 @@ int findMaxDigit(int number) {
     return maxDigit; // Возвращаем наибольшую цифру
 }
 
+// Функция для нахождения наименьшей цифры в числе
+int findMinDigit(int number) {
+    int minDigit = 9; 
+    while (number > 0) { // Пока число больше 0
+        int digit = number % 10; // Получаем последнюю цифру числа
+        if (digit < minDigit) { // Если текущая цифра меньше minDigit
+            minDigit = digit; // Обновляем minDigit
+        }
+        number /= 10; // Убираем последнюю цифру из числа
+    }
+    return minDigit; // Возвращаем наименьшую цифру
+}
+
 
